@@ -3,6 +3,8 @@
     <head>
          <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, inital-scale=1">
+        <!--Css ext style sheet reference-->
+        <link rel="stylesheet" href="./css/styles.css">
          <title>Login Page</title>
     </head>
     <body>

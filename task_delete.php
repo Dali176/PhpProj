@@ -11,5 +11,6 @@ if($taskID != false) {
     $statement->closeCursor();
 }
 
+//redirect to home page
 header('Location: todo_list.php');
 ?>

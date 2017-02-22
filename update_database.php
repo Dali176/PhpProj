@@ -11,15 +11,15 @@ if($isAddition == "1") {
 }
 else {
     $taskID = filter_input(INPUT_POST, "IDTextField");
-    $query = "UPDATE tasks SET NAME = :task_name, Completed = :task_completed WHERE Id = :task_id";
+    $query = "UPDATE tasks SET NAME = :task_name, Completed = :task_completed WHERE Id = :task_id"; //SQL statement
     $statement = $db->prepare($query);
     $statement->bindValue(':task_id', $taskID);
 }
 
 $statement->bindValue('task_name', $taskTask);
 $statement->bindValue('task_completed', $taskCompleted);
-$statement->execute();
-$statement->closeCursor();
+$statement->execute();  //Run on server
+$statement->closeCursor(); //Close connection
 
 header('Location: todo_list.php');
 ?>
