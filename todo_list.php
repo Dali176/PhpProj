@@ -16,8 +16,17 @@ $statement->closeCursor();
     <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./Content/app.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="todo_list.php" title="">Home</a></li>
+            <li><a href="task_details.php" title="">Task Details</a></li>
+        </ul>
+    </nav>
+</header>
 <div class="contaner">
     <div class="row">
         <div class="row">

@@ -10,3 +10,22 @@
         if($password !== 'password')$passError = 'Invalid Password';
     }
 ?>
+
+echo "<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta http-equiv='content-type' content='text/html;charset=utf-8' />
+    <title>Login</title>
+</head>
+<body>
+    <form name='input' action='{$_SERVER['PHP_SELF']}' method='post'>
+        <label for='username'></label><input type='text' value='$username' id='username' name='username' />
+        <div class='error'>$userError</div>
+        <label for='password'></label><input type='password' value='$password' id='password' name='password' />
+        <div class='error'>$passError</div>
+        <input type='submit' value='Home' name='sub' />
+    </form>
+    <script type='text/javascript' src='common.js'></script>
+</body>
+</html>";
+?>
