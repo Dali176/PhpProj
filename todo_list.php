@@ -1,5 +1,5 @@
 <?php
-include_once('databse.php');
+include_once('database.php');
 $query = "SELECT * FROM tasks";
 $statement = $db->prepare($query);
 $statement->excute();
