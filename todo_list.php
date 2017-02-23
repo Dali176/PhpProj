@@ -32,21 +32,19 @@ $statement->closeCursor();
 </header>
 <div class="container">
     <div class="row">
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                <h1>Tasks</h1>
-                <a class="btn btn-primary" href="task_details.php?taskID=0">
-                    <i class="fa fa=plus"></i> Add New Task</a>
-                <br>
-                <table class="table table-stripped table-hover table-bordered">
-                    <tr>
-                        <th>ID</th>
-                        <th>Task</th>
-                        <th>Completed</th>
-                        <th></th>
-                        <th></th>
-
-                    </tr>
+        <div class="col-md-offset-3 col-md-6">
+            <h1>Tasks</h1>
+            <a class="btn btn-primary" href="task_details.php?taskID=0">
+                <i class="fa fa=plus"></i> Add New Task</a>
+            <br>
+            <table class="table table-stripped table-hover table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Task</th>
+                    <th>Completed</th>
+                    <th></th>
+                    <th></th>
+                 </tr>
                     <?php foreach($tasks as $task) : ?>
                         <tr>
                             <td><?php echo $task['ID'] ?></td>
@@ -57,17 +55,15 @@ $statement->closeCursor();
 
                             <td><a class="btn btn-danger" href="task_delete.php?taskID=<?php echo $task['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
 
-
                         </tr>
                     <?php endforeach; ?>
-                </table>
-            </div>
+            </table>
         </div>
     </div>
 </div>
 
-<script src="Scripts/lib/jquery/dist/jquery.min.js"></script>
-<script src="./Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./Scripts/app.js"></script>
+<script src="../project1/Scripts/lib/jquery/dist/jquery.min.js"></script>
+<script src="../project1/Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../project1/Scripts/app.js"></script>
 </body>
 </html>
