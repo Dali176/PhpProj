@@ -6,6 +6,7 @@ $statement->excute();
 $tasks = $statement->fetchAll();
 $statement->closeCursor();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +28,7 @@ $statement->closeCursor();
         </ul>
     </nav>
 </header>
-<div class="contaner">
+<div class="container">
     <div class="row">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
