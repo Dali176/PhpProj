@@ -1,15 +1,17 @@
 <?php
 include_once('database.php');
+
 $query = "SELECT * FROM tasks";
 $statement = $db->prepare($query);
 $statement->excute();
 $tasks = $statement->fetchAll();
 $statement->closeCursor();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>To do list</title>
     <!-- CSS Section -->
@@ -38,9 +40,12 @@ $statement->closeCursor();
                 <br>
                 <table class="table table-stripped table-hover table-bordered">
                     <tr>
+                        <th>ID</th>
                         <th>Task</th>
                         <th>Completed</th>
                         <th></th>
+                        <th></th>
+
                     </tr>
                     <?php foreach($tasks as $task) : ?>
                         <tr>
@@ -51,6 +56,8 @@ $statement->closeCursor();
                             <td><a class="btn btn-primary" href="task_details.php?taskID=<?php echo $task['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
                             <td><a class="btn btn-danger" href="task_delete.php?taskID=<?php echo $task['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
+
+
                         </tr>
                     <?php endforeach; ?>
                 </table>
