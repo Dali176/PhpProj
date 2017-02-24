@@ -11,6 +11,8 @@ if($taskID == 0) {
     $query = "SELECT * FROM tasks WHERE ID = task_id";
     $statement = $db->prepare($query);
     $statement->bindValue(':task_id', $taskID);
+    $statement->bindValue(':task_task', $taskTask);
+    $statement->bindValue(':task_completed', $taskCompleted);
     $statement->execute();
     $game = $statement->fetch();
     $statement->closeCursor();
@@ -40,7 +42,7 @@ if($taskID == 0) {
 </header>
 <div class="container">
     <div class="row">
-        <dvi class="col-md-offset-3 col-md-6">
+        <div class="col-md-offset-3 col-md-6">
             <h1>Task Details</h1>
             <form action="update_database.php" method="post">
                 <div class="form-group">
@@ -48,11 +50,16 @@ if($taskID == 0) {
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField" placeholder="Task Number" value="<?php echo $task['Id']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="NameTextField">Task Name</label>
+                    <label for="TaskTextField">Task Name</label>
                     <input type="text" class="form-control" id="NameTextField" name="NameTextField" placeholder="Task Name" required value="<?php echo $task['task']; ?>">
                 </div>
+                <div class="form-group">
+                    <label for="CompletedField">Completion</label>
+                    <input type="text" class="form-control" id="CompletedField" name="CompletedField"
+                           placeholder="Completed" required  value="<?php echo $task['Completed']; ?>">
+                </div>
             </form>
-        </dvi>
+        </div>
     </div>
 </div>
 </body>

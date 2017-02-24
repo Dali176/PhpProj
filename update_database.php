@@ -2,7 +2,7 @@
 include_once('database.php');
 
 $isAddition = filter_input(INPUT_POST, "isAddition");
-$taskTask = filter_input(INPUT_POST, "NameTextField");
+$taskTask = filter_input(INPUT_POST, "TaskTextField");
 $taskCompleted = filter_input(INPUT_POST, "CompletedField");
 
 if($isAddition == "1") {
@@ -16,7 +16,7 @@ else {
     $statement->bindValue(':task_id', $taskID);
 }
 
-$statement->bindValue('task_name', $taskTask);
+$statement->bindValue('task_task', $taskTask);
 $statement->bindValue('task_completed', $taskCompleted);
 $statement->execute();  //Run on server
 $statement->closeCursor(); //Close connection
